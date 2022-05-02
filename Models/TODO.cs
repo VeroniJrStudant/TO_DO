@@ -2,12 +2,12 @@
 
 namespace TO_DO.Models
 {
-    public class TODO
+    public class ToDo
     {
         [Key]
-        public  int Id { get; set; }
+        public int Id { get; set; }
         public string Title { get; set; }
-        public int CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
         public bool Done { get; set; }
     }
 }

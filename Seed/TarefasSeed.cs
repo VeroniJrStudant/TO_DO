@@ -4,13 +4,13 @@ namespace TO_DO.Seed
 {
     public class TarefasSeed
     {
-        public static List<TODO> Seed { get; set; } = new List<TODO>()
-        { new TODO
+        public static List<ToDo> Seed { get; set; } = new List<ToDo>()
+        { new ToDo
             {
                 Id = 1,
                 Title = "exemplo1",
-                CreatedDate = 01/01/2022,
-                Done = true,
+                CreatedDate = DateTime.Now,
+                Done = false,
             }
         };
     }

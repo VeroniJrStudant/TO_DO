@@ -8,10 +8,10 @@ public class SqlContext: DbContext
 {
     public SqlContext(DbContextOptions<SqlContext> options) : base(options) { }
     
-    public DbSet<TODO> TODO { get; set; }
+    public DbSet<ToDo> ToDos { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<TODO>().HasData(TarefasSeed.Seed);
+        modelBuilder.Entity<ToDo>().HasData(TarefasSeed.Seed);
     }
 }

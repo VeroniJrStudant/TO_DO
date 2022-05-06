@@ -18,16 +18,23 @@ namespace TO_DO.Controllers
         }
         // GET: api/<ValuesController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<ToDo> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new List<ToDo>();
         }
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<ActionResult<ToDo>> GetAddress(int id)
         {
-            return "value";
+            var todo = await _context.ToDos.FindAsync(id);
+
+            if (todo == null)
+            {
+                return NotFound();
+            }
+
+            return todo;
         }
 
         // POST api/<ValuesController>
